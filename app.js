@@ -38,4 +38,4 @@ app.get('/',function(req,res){
 
 
 
-app.listen(5000,()=>{console.console.log("Server ready at "+ 5000)});
+app.listen(5000,()=>{console.log("Server ready at "+ 5000)});
