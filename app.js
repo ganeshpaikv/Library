@@ -1,7 +1,8 @@
 const express = require('express');
-const p = process.env.port || 2000;
+
 const app = new express();
 
+const p = process.env.PORT || 5000;
 
 const nav = [{link:'/books', name:'Books'},{link:'/newbook', name: 'Add a Book'},{link:'/authors', name: 'Authors'},{link:'/newauthor', name: 'Add an Author'},{link:'/signup', name: 'Sign-Up'},{link:'/login', name: 'Login'}];
 const bookrouter = require('./src/routes/bookroutes')(nav);
