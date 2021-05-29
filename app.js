@@ -1,6 +1,7 @@
 const express = require('express');
+const p = process.env.port || 2000;
 const app = new express();
-const port = process.env.PORT || 2000;
+
 
 const nav = [{link:'/books', name:'Books'},{link:'/newbook', name: 'Add a Book'},{link:'/authors', name: 'Authors'},{link:'/newauthor', name: 'Add an Author'},{link:'/signup', name: 'Sign-Up'},{link:'/login', name: 'Login'}];
 const bookrouter = require('./src/routes/bookroutes')(nav);
@@ -36,4 +37,4 @@ app.get('/',function(req,res){
 
 
 
-app.listen(port,()=>{console.console.log("Server ready at "+ port)});
+app.listen(p,()=>{console.console.log("Server ready at "+ p)});
