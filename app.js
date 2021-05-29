@@ -32,10 +32,4 @@ app.get('/',function(req,res){
     });
 });
 
-
-
-
-
-
-
-app.listen(8080,()=>{console.log("Server ready at "+ 8080)});
+app.listen(process.env.PORT || 5000);
