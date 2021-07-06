@@ -16,8 +16,8 @@ var path = require('path');
  const { authUser, authRole } = require('./public/js/basicAuth');
 //  const { users } = require('./public/js/data');
 
-const nav = [{link:'/books', name:'Books'},{link:'/newbook', name: 'Add a Book'},{link:'/authors', name: 'Authors'},{link:'/newauthor', name: 'Add an Author'},{link:'/login', name: 'Logout'}];
-const navbar = [{link:'/books', name:'Books'},{link:'/authors', name: 'Authors'},{link:'/login', name: 'Logout'}];
+const nav = [{link:'/admin/books', name:'Books'},{link:'/admin/newbook', name: 'Add a Book'},{link:'/admin/authors', name: 'Authors'},{link:'/admin/newauthor', name: 'Add an Author'},{link:'/login', name: 'Logout'}];
+const navbar = [{link:'user/books', name:'Books'},{link:'user/authors', name: 'Authors'},{link:'/login', name: 'Logout'}];
 const navhome = [{link:'/signup', name: 'Sign-Up'},{link:'/login', name: 'Login'}];
 const bookrouter = require('./src/routes/bookroutes')(nav);
 const authrouter = require('./src/routes/authorroute')(nav);
@@ -73,11 +73,22 @@ app.get('/',function(req,res){
       title: 'Welcome to Library'
     });
 });
+app.get('/admin',function(req,res){
 
+  res.render("admin",
+  {
+    nav ,
+    title: 'Welcome to Library'
+  });
+});
+app.get('/user',function(req,res){
 
-
-
-
+  res.render("user",
+  {
+    navbar ,
+    title: 'Welcome to Library'
+  });
+});
 function setUser(req, res, next) {
   const userId = req.body.userId
   if (userId) {

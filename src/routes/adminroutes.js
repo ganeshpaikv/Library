@@ -24,6 +24,21 @@ var storage = multer.diskStorage({
 function router1(nav)
 {
 // Books
+adminrouter.get('/admin',function(req,res){
+
+  res.render("index",
+  {
+    nav :[{link:'admin/books', name:'Books'},{link:'admin/newbook', name: 'Add a Book'},{link:'admin/authors', name: 'Authors'},{link:'admin/newauthor', name: 'Add an Author'},{link:'/login', name: 'Logout'}] ,
+    title: 'Welcome to Library'
+  });
+});
+
+
+
+
+  
+
+
 
     adminrouter.get('/books',function(req,res){
       // console.log(__dirname);
@@ -34,7 +49,7 @@ function router1(nav)
 
         res.render("books",
         {
-          nav : [{link:'admin/books', name:'Books'},{link:'admin/newbook', name: 'Add a Book'},{link:'admin/authors', name: 'Authors'},{link:'admin/newauthor', name: 'Add an Author'},{link:'/login', name: 'Logout'}],
+          nav : [{link:'/admin/books', name:'Books'},{link:'/admin/newbook', name: 'Add a Book'},{link:'/admin/authors', name: 'Authors'},{link:'/admin/newauthor', name: 'Add an Author'},{link:'/login', name: 'Logout'}],
             title: 'Books',
             books
           }); 
@@ -48,7 +63,7 @@ function router1(nav)
       bookdata.findOne({_id:id})
       .then(function(book){
         res.render('book',{
-          nav,
+          nav : [{link:'/admin/books', name:'Books'},{link:'/admin/newbook', name: 'Add a Book'},{link:'/admin/authors', name: 'Authors'},{link:'/admin/newauthor', name: 'Add an Author'},{link:'/login', name: 'Logout'}],
             title: 'Book',
             book
       
@@ -62,7 +77,7 @@ function router1(nav)
       bookdata.deleteOne({_id:id})
       .then(function(book){
         res.render('deletebook',{
-          nav,
+          nav : [{link:'/admin/books', name:'Books'},{link:'/admin/newbook', name: 'Add a Book'},{link:'/admin/authors', name: 'Authors'},{link:'/admin/newauthor', name: 'Add an Author'},{link:'/login', name: 'Logout'}],
             title: 'Deleted Successfully',
             book
       
@@ -78,9 +93,9 @@ function router1(nav)
           .then(function(authors){
             res.render("authors",
             {
-              nav,
-                title: 'Authors',
-                authors
+              nav : [{link:'/admin/books', name:'Books'},{link:'/admin/newbook', name: 'Add a Book'},{link:'/admin/authors', name: 'Authors'},{link:'/admin/newauthor', name: 'Add an Author'},{link:'/login', name: 'Logout'}],
+              title: 'Authors',
+              authors
               });
           })
         
@@ -92,9 +107,9 @@ function router1(nav)
           authordata.deleteOne({_id:id})
           .then(function(author){
             res.render('deleteauthor',{
-              nav,
-                title: 'Deleted Successfully',
-                author
+              nav : [{link:'/admin/books', name:'Books'},{link:'/admin/newbook', name: 'Add a Book'},{link:'/admin/authors', name: 'Authors'},{link:'/admin/newauthor', name: 'Add an Author'},{link:'/login', name: 'Logout'}],
+              title: 'Author',
+              author
           
             });
           })
@@ -107,7 +122,7 @@ function router1(nav)
           authordata.findOne({_id:id})
           .then(function(author){
             res.render('author',{
-                nav,
+              nav : [{link:'/admin/books', name:'Books'},{link:'/admin/newbook', name: 'Add a Book'},{link:'/admin/authors', name: 'Authors'},{link:'/admin/newauthor', name: 'Add an Author'},{link:'/login', name: 'Logout'}],
                   title: 'Author',
                   author
             
@@ -122,7 +137,7 @@ function router1(nav)
         adminrouter.get('/newauthor',function(req,res){
           res.render("newauthor",
           {
-            nav,
+            nav : [{link:'/admin/books', name:'Books'},{link:'/admin/newbook', name: 'Add a Book'},{link:'/admin/authors', name: 'Authors'},{link:'/admin/newauthor', name: 'Add an Author'},{link:'/login', name: 'Logout'}],
               title: 'Add New Author',
               
             });
@@ -177,7 +192,7 @@ function router1(nav)
           adminrouter.get('/newbook',function(req,res){
             res.render("newbook",
             {
-              nav,
+              nav : [{link:'/admin/books', name:'Books'},{link:'/admin/newbook', name: 'Add a Book'},{link:'/admin/authors', name: 'Authors'},{link:'/admin/newauthor', name: 'Add an Author'},{link:'/login', name: 'Logout'}],
                 title: 'Add New Book',
                 
               });
@@ -315,7 +330,7 @@ adminrouter.post('/updateauthor/:id/update',(req,res)=>{
     ad.findOne({_id:id})
     .then(function(author){
       res.render('updateauthor',{
-        nav,
+        nav : [{link:'/admin/books', name:'Books'},{link:'/admin/newbook', name: 'Add a Book'},{link:'/admin/authors', name: 'Authors'},{link:'/admin/newauthor', name: 'Add an Author'},{link:'/login', name: 'Logout'}],
           title: 'Edit Author',
           author
     
@@ -393,7 +408,7 @@ adminrouter.get('/updatebook/:id',function(req,res){
   
   .then(function(book){
     res.render('updatebook',{
-      nav,
+      nav : [{link:'/admin/books', name:'Books'},{link:'/admin/newbook', name: 'Add a Book'},{link:'/admin/authors', name: 'Authors'},{link:'/admin/newauthor', name: 'Add an Author'},{link:'/login', name: 'Logout'}],
         title: 'Edit Book',
         book
         

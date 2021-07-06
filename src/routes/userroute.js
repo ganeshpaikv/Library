@@ -22,8 +22,9 @@ function router(nav)
 
         res.render("books",
         {
-          nav,
-            title: 'Books',
+          // nav: [{link:'/books', name:'Books'},{link:'/authors', name: 'Authors'},{link:'/login', name: 'Logout'}];
+           nav:[{link:'/books', name:'Books'},{link:'/user/authors', name: 'Authors'},{link:'/login', name: 'Logout'}],
+          title: 'Books',
             books
           }); 
       })
@@ -36,7 +37,7 @@ function router(nav)
       bookdata.findOne({_id:id})
       .then(function(book){
         res.render('book',{
-          nav,
+          nav:[{link:'/books', name:'Books'},{link:'/user/authors', name: 'Authors'},{link:'/login', name: 'Logout'}],
             title: 'Book',
             book
       
@@ -50,7 +51,7 @@ function router(nav)
       .then(function(authors){
         res.render("authors",
         {
-          nav,
+          nav:[{link:'/user/books', name:'Books'},{link:'/authors', name: 'Authors'},{link:'/login', name: 'Logout'}],
             title: 'Authors',
             authors
           });
@@ -64,7 +65,7 @@ function router(nav)
       authordata.findOne({_id:id})
       .then(function(author){
         res.render('author',{
-          nav,
+          nav:[{link:'/user/books', name:'Books'},{link:'/authors', name: 'Authors'},{link:'/login', name: 'Logout'}],
               title: 'Author',
               author
         

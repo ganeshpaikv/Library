@@ -64,10 +64,12 @@ function logrouter(navhome)
         else {
           console.log('Found!');
           if(name=='admin@abc.com'){
-            res.redirect('/admin/books');
+            res.redirect('/admin');
+
           }
           else{
-            res.redirect('/user/books');
+            res.redirect('/user');
+
           }
           
         }
