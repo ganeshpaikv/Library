@@ -1,68 +1,81 @@
-const express = require('express');
-const newauthorrouter = express.Router();
+// const express = require('express');
+// const newauthorrouter = express.Router();
+// const ad = require('../model/authordata');  
+// const multer = require('multer');
+// const GridFsStorage = require("multer-gridfs-storage");
+// var fs = require('fs');
+// var path = require('path');
+
+// var storage = multer.diskStorage({
+//   destination: (req, file, cb) => {
+//       cb(null, '/home/ganesh/Desktop/Node/Assignment-Library App copy1/public/images')
+//   },
+//   filename: (req, file, cb) => {
+//       cb(null, file.fieldname + '-' + Date.now()+path.extname(file.originalname));
+//   }
+// });
 
 
-function newrouter(nav)
-{
+// function newarouter(nav)
+// {
 
-
-// var books = [
-//     {
-//         title : 'The Alchemist',
-//         author : 'Paulo Coelho',
-//         genre : 'Novel',
-//         img : 'alchemist.jpeg'
-//     },
-//     {
-//       title : 'The Secret',
-//       author : 'Rhonda Byrne',
-//       genre : 'self-help',
-//       img : 'secret.jpeg'
-//     },
-    
-//     {
-//       title : 'Three Thousand Stitches: Ordinary People, Extraordinary Lives',
-//       author : 'Sudha Murty',
-//       genre : 'anecdotes',
-//       img : 'threethousand.jpeg'
-//     },
-//     {
-//       title : 'The Test of My Life: From Cricket to Cancer and Back',
-//       author : 'Yuvraj Singh',
-//       genre : 'autobiography',
-//       img : 'testofmylife.jpeg'
-//     },
-    
-//     {
-//       title : 'The Lost Symbol',
-//       author : 'Dan Brown',
-//       genre : 'Mystery',
-//       img : 'lostsymbol.jpeg'
-//     },
-    
-    
-//     ]
-    
-    newauthorrouter.get('/',function(req,res){
-      res.render("newauthor",
-      {
-        nav,
-          title: 'Add New Author',
+//     // newauthorrouter.get('/',function(req,res){
+//     //   res.render("newauthor",
+//     //   {
+//     //     nav,
+//     //       title: 'Add New Author',
           
-        });
-    });
-    
-    // bookrouter.get('/:id',function(req,res){
-    //   const id = req.params.id
-    //   res.render('book',{
-    //     nav,
-    //       title: 'Book',
-    //       book:books[id]
-    
-    //   });
-    // });
+//     //     });
+//     // });
 
-    return newauthorrouter;
-}
+// // 
+    
+//     // newauthorrouter.post('/add',function(req,res){
+//     //   var upload = multer({ storage: storage }).single('image');
+      
+//     //   upload(req, res, function(err) {
+        
+//     //      if (!req.file) {
+//     //         console.log('Please select an image to upload');
+//     //     }
+//     //     // else if (err instanceof multer.MulterError) {
+//     //     //     return res.send(err);
+//     //     // }
+//     //     else if (err) {
+//     //       console.log(err);
+//     //     }
+//     //   else{
+       
+//     //         var item ={
+          
+//     //         name: req.body.name,
+//     //         work : req.body.work,
+//     //         genre: req.body.genre,
+//     //         image: req.file.filename
+//     //         }
+//     //       }
+//     //       // {
+//     //       // //     data: fs.readFileSync('/home/ganesh/Desktop/Node/Assignment-Library App copy1' + '/public/images/' + req.file.filename),
+//     //       // //     contentType: 'image/png'
+//     //       // // }
+//     //       //   }
+//     //         // bd.create(item);
+//     //        var author =  ad(item);
+            
+//     //        author.save();
+           
+           
+//     //        res.redirect('/authors');
+      
+         
+//     //       });
+         
+//     //     });
+      
+      
+   
+    
+//     return newauthorrouter;
+// }
 
-    module.exports = newrouter;
+//     module.exports = newarouter;

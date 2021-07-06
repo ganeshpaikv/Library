@@ -1,67 +1,79 @@
 const express = require('express');
 const bookrouter = express.Router();
+const bookdata = require('../model/bookdata');
 
 
 function router(nav)
 {
 
+    // bookrouter.get('/',function(req,res){
+    //   // console.log(__dirname);
+    //   bookdata.find()
+    //   .then(function(books){
 
-var books = [
-    {
-        title : 'The Alchemist',
-        author : 'Paulo Coelho',
-        genre : 'Novel',
-        img : 'alchemist.jpeg'
-    },
-    {
-      title : 'The Secret',
-      author : 'Rhonda Byrne',
-      genre : 'self-help',
-      img : 'secret.jpeg'
-    },
-    
-    {
-      title : 'Three Thousand Stitches: Ordinary People, Extraordinary Lives',
-      author : 'Sudha Murty',
-      genre : 'anecdotes',
-      img : 'threethousand.jpeg'
-    },
-    {
-      title : 'The Test of My Life: From Cricket to Cancer and Back',
-      author : 'Yuvraj Singh',
-      genre : 'autobiography',
-      img : 'testofmylife.jpeg'
-    },
-    
-    {
-      title : 'The Lost Symbol',
-      author : 'Dan Brown',
-      genre : 'Mystery',
-      img : 'lostsymbol.jpeg'
-    },
-    
-    
-    ]
-    
-    bookrouter.get('/',function(req,res){
-      res.render("books",
-      {
-        nav,
-          title: 'Books',
-          books
-        });
-    });
-    
-    bookrouter.get('/:id',function(req,res){
-      const id = req.params.id
-      res.render('book',{
-        nav,
-          title: 'Book',
-          book:books[id]
-    
-      });
-    });
 
+
+    //     res.render("books",
+    //     {
+    //       nav,
+    //         title: 'Books',
+    //         books
+    //       }); 
+    //   })
+      
+    // });
+    
+    // bookrouter.get('/:id',function(req,res){
+
+    //   const id = req.params.id
+    //   bookdata.findOne({_id:id})
+    //   .then(function(book){
+    //     res.render('book',{
+    //       nav,
+    //         title: 'Book',
+    //         book
+      
+    //     });
+    //   })
+     
+    // });
+
+    // bookrouter.get('/delete/:id',function(req,res){
+    //   const id = req.params.id;
+    //   bookdata.deleteOne({_id:id})
+    //   .then(function(book){
+    //     res.render('deletebook',{
+    //       nav,
+    //         title: 'Deleted Successfully',
+    //         book
+      
+    //     });
+    //   })
+     
+    // });
+  
+            
+    
+
+  
+    // bookrouter.get('/newbook',function(req,res){
+
+    //   const id = req.params.id
+    //   bookdata.findOne({_id:id})
+    //   .then(function(book){
+    //     res.render('newbook',{
+    //       nav,
+    //         title: 'Book',
+    //         book
+      
+    //     });
+    //   })
+     
+    // });
+
+   
+      
+   
     return bookrouter;
 }
 

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add a Book</title>
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
+</head>
+<body>
+   
+         
+   
+
+
+      <div class="container-fluid" style="background-image: url(/images/add.jpg);background-position:right">
+        <form method="POST" action="newbook/update" style="padding-left: 28%;">
+            <div class="mb-3">
+                <h3 style="padding-top: 8%; color:lime ;" >Edit a Book</h3><br />
+                <label for="emailerror" id="emailerror" style="color:white">Name of the Book</label><br />
+                <input type="text" class="form-control" name="title" id="InputEmail"  style="width: 30%;" required><br />
+               
+                <label for="moberror" id="moberror" style="color:white">Author</label><br />
+               <input type="text" class="form-control" name="author" id="InputMobile" style="width: 30%;" required><br />
+               
+               <label for="pwderror" id="pwderror" style="color:white">Genre</label><br />
+               <input type="text" class="form-control" name="genre" id="InputPassword" style="width: 30%;" required>
+               <label for="pwderror" id="pwderror"></label><br />
+               
+               <label for="pwderror" id="cpwderror" style="color:white">Image</label><br />
+               <input type="file" class="form-control" name="image" id="cInputPassword" style="width: 30%;" required><br /><br />
+               <button type="submit" class="btn btn-primary">Submit</button>
+              
+
+            </div>
+            
+            <button type="submit" class="btn btn-primary" style="display: none;">Submit</button>
+                    
+           
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            
+            
+          </form>
+    
+    </div>
+  <!-- /<script src="https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/4.2.0/zxcvbn.js"></script> -->
+<script src="/js/form1.js"></script>
+</body>
+</html>

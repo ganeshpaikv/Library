@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
+</head>
+<body>
+   
+         
+   
+
+
+      <div class="container-fluid" style="background-image: url(images/background.jpeg);background-position:right">
+        <form method="POST" action="signup/add" onsubmit="return validatewithstrength();">
+            <div class="mb-3">
+                <h3 style="padding-left: 5%; padding-top: 8%; color:lime ;" >Sign Up</h3><br /><br />
+               <input type="text" class="form-control" id="InputEmail" name="un"   placeholder="Email" style="width: 30%;">
+               <label for="emailerror" id="emailerror"></label><br /><br/>
+               <input type="text" class="form-control" id="InputMobile" name="mob" placeholder="Mobile Number" style="width: 30%;">
+               <label for="moberror" id="moberror"></label><br /><br/>
+               <input type="password" class="form-control" id="InputPassword" name="passwd" placeholder="Password" style="width: 30%;">
+               <label for="pwderror" id="pwderror"></label><br /><br />
+               
+      
+               <input type="password" class="form-control" id="cInputPassword" name="cpasswd"  placeholder="Confirm Password" style="width: 30%;">
+               <label for="cpwderror" id="cpwderror"></label><br /><br/>
+            </div>
+            
+           
+                    
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            
+            
+          </form>
+    
+    </div>
+  <!-- /<script src="https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/4.2.0/zxcvbn.js"></script> -->
+<script src="js/form1.js"></script>
+</body>
+</html>
