@@ -34,7 +34,7 @@ function router1(nav)
 
         res.render("books",
         {
-          nav,
+          nav : [{link:'admin/books', name:'Books'},{link:'admin/newbook', name: 'Add a Book'},{link:'admin/authors', name: 'Authors'},{link:'admin/newauthor', name: 'Add an Author'},{link:'/login', name: 'Logout'}],
             title: 'Books',
             books
           }); 

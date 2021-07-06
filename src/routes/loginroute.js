@@ -63,7 +63,13 @@ function logrouter(navhome)
           res.send('Invalid Credentials');
         else {
           console.log('Found!');
-          res.redirect('/user/books');
+          if(name=='admin@abc.com'){
+            res.redirect('/admin/books');
+          }
+          else{
+            res.redirect('/user/books');
+          }
+          
         }
     //     if(err) {
     //       console.log('Server Error');

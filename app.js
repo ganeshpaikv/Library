@@ -11,7 +11,7 @@ passportLocalMongoose = require("passport-local-mongoose");
 var fs = require('fs');
 var path = require('path');
 
- const p = process.env.PORT || 5000;
+ const PORT = process.env.PORT || 5000;
  const { ROLE, users } = require('./public/js/data');
  const { authUser, authRole } = require('./public/js/basicAuth');
 //  const { users } = require('./public/js/data');
@@ -24,10 +24,10 @@ const authrouter = require('./src/routes/authorroute')(nav);
 const signuprouter = require('./src/routes/signuproute')(navhome);
 const loginrouter = require('./src/routes/loginroute')(navhome);
 
-// const newbookrouter = require('./src/routes/newbook')(nav);
-// const newauthorrouter = require('./src/routes/newauthor')(nav);
-// const updatebookrouter = require('./src/routes/updatebook')(nav);
-// const updateauthorrouter = require('./src/routes/updateauthor')(nav);
+ const newbookrouter = require('./src/routes/newbook')(nav);
+ const newauthorrouter = require('./src/routes/newauthor')(nav);
+ const updatebookrouter = require('./src/routes/updatebook')(nav);
+ const updateauthorrouter = require('./src/routes/updateauthor')(nav);
 const userrouter = require('./src/routes/userroute')(nav);
 const adminrouter = require('./src/routes/adminroutes')(nav);
 const userarouter = require('./src/routes/useraroute')(nav);
@@ -43,12 +43,12 @@ app.use(express.urlencoded({extended:true}));
 
 // app.use(express.json());
 
-// app.use('/newbook', newbookrouter);
-// app.use('/newauthor',newauthorrouter);
-// app.use('/updatebook', updatebookrouter);
-// app.use('/updateauthor',updateauthorrouter);
-// app.use('/authors', authrouter);
-// app.use('/books',bookrouter);
+app.use('/newbook', newbookrouter);
+app.use('/newauthor',newauthorrouter);
+app.use('/updatebook', updatebookrouter);
+app.use('/updateauthor',updateauthorrouter);
+app.use('/authors', authrouter);
+app.use('/books',bookrouter);
 app.use('/signup',signuprouter);
 app.use('/login',loginrouter);
 app.use('/user',userrouter);
@@ -87,8 +87,8 @@ function setUser(req, res, next) {
 }
 
 
-app.listen(5001);
+// app.listen(5001);
 // const PORT = process.env.PORT || 8080;
-// app.listen(PORT, () => {
-//   console.log(`Server is running on port ${PORT}.`);
-// });
+ app.listen(PORT, () => {
+   console.log(`Server is running on port ${PORT}.`);
+ });
